@@ -1,0 +1,53 @@
+import Image from "next/image";
+
+export default function Hero() {
+  return (
+    <header
+      id="home"
+      className="scroll-mt-16 bg-white p-8 min-h-[calc(100vh-4rem)] flex items-center"
+    >
+      <div className="container mx-auto grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr]">
+        {/* Left: Text */}
+        <div>
+          <h1 className="mb-4 text-3xl font-bold leading-tight text-gray-900 lg:text-5xl">
+            Hi, I&apos;m Manik <br /> Software Engineer
+          </h1>
+
+          <p className="mb-6 text-gray-600 md:pr-16 xl:pr-28">
+            I build scalable backend systems and production-ready web
+            applications with a strong focus on performance, reliability, and
+            clean architecture.
+          </p>
+
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <a
+              href="/resume.pdf"
+              className="inline-flex items-center justify-center rounded-md bg-gray-900 px-6 py-3 text-white transition hover:bg-gray-800"
+            >
+              View Resume
+            </a>
+
+            <a
+              href="https://linkedin.com"
+              className="inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-gray-900 transition hover:border-gray-900"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        {/* Right: Illustration */}
+        <div className="flex justify-center lg:justify-end">
+          <Image
+            src="/dd.svg"
+            alt="Developer illustration"
+            width={420}
+            height={420}
+            className="max-w-[420px] w-full"
+            priority
+          />
+        </div>
+      </div>
+    </header>
+  );
+}
