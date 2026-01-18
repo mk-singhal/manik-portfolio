@@ -4,7 +4,7 @@ import { LINKS } from "@/utilities/constants";
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-white py-24">
+    <section id="experience" className="bg-white py-8">
       <div className="container mx-auto px-8">
         {/* Section heading */}
         <div className="mb-12">
@@ -17,7 +17,7 @@ export default function Experience() {
         </div>
 
         {/* Timeline */}
-        <div className="border-l border-gray-200 pl-6 space-y-16">
+        <div className="space-y-16 md:border-l md:border-gray-200 md:pl-6">
           {/* Oracle */}
           <div className="relative">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -39,7 +39,9 @@ export default function Experience() {
                 </h3>
               </a>
 
-              <span className="text-sm text-gray-500">Jul 2023 – Present</span>
+              <span className="text-sm text-gray-500">
+                Jul 2023 – Present · <span className="italic">2 yr 6 mos</span>
+              </span>
             </div>
 
             <p className="mt-2 text-sm text-gray-600 max-w-3xl">
