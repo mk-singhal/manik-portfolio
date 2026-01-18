@@ -4,16 +4,17 @@ export default function Hero() {
   return (
     <header
       id="home"
-      className="scroll-mt-16 bg-white p-8 min-h-[calc(100vh-4rem)] flex items-center"
+      className="relative scroll-mt-16 bg-white p-8 min-h-[calc(100vh-4rem)] flex items-center"
     >
-      <div className="container mx-auto grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr]">
+      <div className="p-4 container mx-auto grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        
         {/* Left: Text */}
         <div>
           <h1 className="mb-4 text-3xl font-bold leading-tight text-gray-900 lg:text-5xl">
             Hi, I&apos;m Manik <br /> Software Engineer
           </h1>
 
-          <p className="mb-6 text-gray-600 md:pr-16 xl:pr-28">
+          <p className="mb-6 max-w-[42rem] text-gray-600">
             I build scalable backend systems and production-ready web
             applications with a strong focus on performance, reliability, and
             clean architecture.
@@ -41,9 +42,9 @@ export default function Hero() {
           <Image
             src="/dd.svg"
             alt="Developer illustration"
-            width={420}
-            height={420}
-            className="max-w-[420px] w-full"
+            width={640}
+            height={640}
+            className="max-w-[540px] w-full"
             priority
           />
         </div>
