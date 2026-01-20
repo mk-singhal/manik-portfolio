@@ -13,7 +13,7 @@ const topSkills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="p-8">
+    <section id="skills" className="bg-white px-8 pt-16 pb-20">
       <h2 className="text-2xl font-semibold">Skills</h2>
 
       {/* Top Skills Row */}
@@ -28,7 +28,7 @@ export default function Skills() {
               alt={skill.name}
               width={36}
               height={36}
-              className="grayscale hover:grayscale-0 transition"
+              className="transition"
             />
             <span>{skill.name}</span>
           </div>

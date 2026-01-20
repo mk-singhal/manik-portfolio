@@ -29,7 +29,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/maniksingal/"
               className="inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-gray-900 transition hover:border-gray-900"
             >
               LinkedIn

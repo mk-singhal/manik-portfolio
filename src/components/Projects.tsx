@@ -49,7 +49,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="px-8 py-24">
+    <section id="projects" className="px-8 pt-16 pb-20">
       <h2 className="text-2xl font-semibold tracking-tight">Projects</h2>
 
       <div className="mt-12 grid gap-8 md:grid-cols-2">

@@ -4,7 +4,7 @@ import { LINKS } from "@/utilities/constants";
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-white py-8">
+    <section id="experience" className="bg-white pt-16 pb-20">
       <div className="container mx-auto px-8">
         {/* Section heading */}
         <div className="mb-12">
