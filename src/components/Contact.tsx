@@ -9,13 +9,25 @@ import {
   Copy,
   MessageCircle,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
   const phoneNumber = "+919467268617"; // REAL number
   const maskedPhone = "+91 •••• •••• 17";
 
-  const copyPhone = () => {
-    navigator.clipboard.writeText(phoneNumber);
+  const [copiedPhone, setCopiedPhone] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const copyPhone = async () => {
+    await navigator.clipboard.writeText(phoneNumber);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 1500);
+  };
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText("maniksingal29@gmail.com");
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 1500);
   };
 
   return (
@@ -42,12 +54,32 @@ export default function Contact() {
               <Mail className="w-4 h-4 text-gray-400 mt-1" />
               <div>
                 <p className="text-gray-500">Email</p>
-                <a
-                  href="mailto:maniksingal29@gmail.com"
-                  className="font-medium hover:underline"
-                >
-                  maniksingal29@gmail.com
-                </a>
+                <div className="flex items-center gap-3 relative">
+                  <a
+                    href="mailto:maniksingal29@gmail.com"
+                    className="font-medium hover:underline"
+                  >
+                    maniksingal29@gmail.com
+                  </a>
+
+                  <button
+                    type="button"
+                    onClick={copyEmail}
+                    aria-label="Copy email address"
+                    className="relative cursor-pointer text-gray-400 hover:text-black transition"
+                  >
+                    <Copy className="w-4 h-4" />
+
+                    {/* Copied confirmation */}
+                    <span
+                      className={`absolute left-6 top-1/2 -translate-y-1/2 text-xs text-gray-600 whitespace-nowrap transition-opacity ${
+                        copiedEmail ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      Copied
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -56,20 +88,30 @@ export default function Contact() {
               <Phone className="w-4 h-4 text-gray-400 mt-1" />
               <div>
                 <p className="text-gray-500">Phone</p>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 relative">
                   <a
                     href={`tel:${phoneNumber}`}
                     className="font-medium hover:underline"
                   >
                     {maskedPhone}
                   </a>
+
                   <button
                     type="button"
                     onClick={copyPhone}
-                    title="Copy phone number"
-                    className="text-gray-400 hover:text-black transition"
+                    aria-label="Copy phone number"
+                    className="relative cursor-pointer text-gray-400 hover:text-black transition"
                   >
                     <Copy className="w-4 h-4" />
+
+                    {/* Copied confirmation */}
+                    <span
+                      className={`absolute left-6 top-1/2 -translate-y-1/2 text-xs text-gray-600 whitespace-nowrap transition-opacity ${
+                        copiedPhone ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      Copied
+                    </span>
                   </button>
                 </div>
               </div>

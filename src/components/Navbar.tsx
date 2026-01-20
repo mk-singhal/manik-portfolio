@@ -1,5 +1,6 @@
 "use client";
 
+import { ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
@@ -7,6 +8,7 @@ const navItems = [
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
+  { label: "Resume", href: "/resume.pdf", external: true },
 ];
 
 export default function Navbar() {
@@ -15,7 +17,6 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur">
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
-
         {/* Brand */}
         <a
           href="#home"
@@ -31,13 +32,18 @@ export default function Navbar() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="relative transition hover:text-gray-900
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="relative inline-flex items-center gap-1 transition hover:text-gray-900
                   after:absolute after:left-0 after:-bottom-1
                   after:h-[2px] after:w-0 after:bg-gray-900
                   after:transition-all after:duration-300
                   hover:after:w-full"
               >
                 {item.label}
+                {item.external && (
+                  <ExternalLink size={12} className="opacity-60" />
+                )}
               </a>
             </li>
           ))}
@@ -66,9 +72,14 @@ export default function Navbar() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 transition hover:text-gray-900"
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-1 py-3 transition hover:text-gray-900"
                 >
                   {item.label}
+                  {item.external && (
+                    <ExternalLink size={12} className="opacity-60" />
+                  )}
                 </a>
               </li>
             ))}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FileText, Linkedin } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -7,7 +8,6 @@ export default function Hero() {
       className="relative scroll-mt-16 bg-white p-8 min-h-[calc(100vh-4rem)] flex items-center"
     >
       <div className="p-4 container mx-auto grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        
         {/* Left: Text */}
         <div>
           <h1 className="mb-4 text-3xl font-bold leading-tight text-gray-900 lg:text-5xl">
@@ -23,15 +23,21 @@ export default function Hero() {
           <div className="flex flex-col gap-4 sm:flex-row">
             <a
               href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md bg-gray-900 px-6 py-3 text-white transition hover:bg-gray-800"
             >
+              <FileText size={16} className="opacity-90 mr-2" />
               View Resume
             </a>
 
             <a
               href="https://www.linkedin.com/in/maniksingal/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-gray-900 transition hover:border-gray-900"
             >
+              <Linkedin size={16} className="opacity-80 mr-2" />
               LinkedIn
             </a>
           </div>
