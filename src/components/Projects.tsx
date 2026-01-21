@@ -37,7 +37,7 @@ export default function Projects() {
       subtitle: "Business Portfolio & Inventory Website",
       tech: "HTML · CSS · JavaScript",
       tags: ["Frontend", "Business"],
-      image: "supreme-trading.png",
+      image: "supreme-trading.webp",
       // github: "https://github.com/mk-singhal/supreme-trading",
       live: "https://supremetrading.store",
       points: [
